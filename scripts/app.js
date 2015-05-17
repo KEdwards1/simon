@@ -1,4 +1,4 @@
-//window.addEventListener('load', function(){
+window.addEventListener('load', function(){
 var computerPattern = [];
 var bank = ['red', 'yellow', 'green', 'blue'];
 var playerPattern = [];
@@ -67,4 +67,4 @@ var showComputerPattern = function() {
 
 $('#start').on('click', showComputerPattern)
 
-//})
+})
