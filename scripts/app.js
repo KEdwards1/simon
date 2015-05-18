@@ -13,10 +13,10 @@ var checkCorrect = function() {
       computerPattern = [];
       playerPattern = [];
       $('#messages').text('You did not enter the pattern correctly. Game over!');
-      $('#start').text('Restart')
-      $('#start').show()
+      $('#start').text('Restart');
+      $('#start').show();
     }
-  }
+  };
   //Grabs the player's move by running an event listener on all color tiles
   //until the appropriate number of clicks is recorded. At the end checkCorrect 
   //is invoked to check if the player's entry was correct.
@@ -26,45 +26,45 @@ var getPlayerPattern = function() {
       $('.tile').off().on('mouseup', function() {
         selectedTile(event.target.id);
         playerPattern.push(event.target.id);
-        clicks += 1
-      })
+        clicks += 1;
+      });
       if (clicks >= computerPattern.length) {
         clearInterval(intervalID);
-        $('.tile').off()
-        checkCorrect()
+        $('.tile').off();
+        checkCorrect();
       }
-    }, (200))
-  }
+    }, (200));
+  };
   //Toggle the selected class on and off in order to present an animation of the color tile being lit
 var selectedTile = function(color) {
     window.setTimeout(function() {
-      $('#' + color).addClass('selected')
-      document.querySelector('#'+color+'-sound').load()
-      document.querySelector('#'+color+'-sound').play()
+      $('#' + color).addClass('selected');
+      document.querySelector('#'+color+'-sound').load();
+      document.querySelector('#'+color+'-sound').play();
       window.setTimeout(function() {
-        $('#' + color).removeClass('selected')
-      }, 200)
-    }, 200)
-  }
+        $('#' + color).removeClass('selected');
+      }, 200);
+    }, 200);
+  };
   //This function generates a pattern by randomly selecting a color from the color bank array
   //At the end getPlayerPattern is invoked to get user input.
 var showComputerPattern = function() {
   $('#messages').text('');
   $('#start').hide();
-  random = bank[Math.floor((Math.random() * 4))]
-  computerPattern.push(random)
+  random = bank[Math.floor((Math.random() * 4))];
+  computerPattern.push(random);
   var count = 0;
   var intervalID = window.setInterval(function() {
-    selectedTile(computerPattern[count])
-    count += 1
+    selectedTile(computerPattern[count]);
+    count += 1;
     if (count >= computerPattern.length) {
-      clearInterval(intervalID)
+      clearInterval(intervalID);
     }
-  }, 300)
-  getPlayerPattern()
-}
+  }, 300);
+  getPlayerPattern();
+};
 
 
-$('#start').on('click', showComputerPattern)
+$('#start').on('click', showComputerPattern);
 
-})
+});
