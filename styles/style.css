@@ -9,26 +9,28 @@
     top: 85px;
     left: 300px;
 }
-#red,
-#yellow,
-#green,
-#blue {
+
+.tile {
     height: 200px;
     width: 200px;
     float: right;
     text-align: center;
 }
+
 .selected {
     opacity: 0.3;
 }
+
 #red {
     background-color: #ef2b2d;
     border-top-right-radius: 15em;
 }
+
 #yellow {
     background-color: #fce016;
     border-top-left-radius: 15em;
 }
+
 #green {
     background-color: #5bbf21;
     border-bottom-right-radius: 15em;
@@ -37,6 +39,7 @@
     background-color: #2d338e;
     border-bottom-left-radius: 15em;
 }
+
 #feedback {
     position: relative;
     left: 750px;
@@ -47,6 +50,7 @@
     font-family: 'Open Sans', sans-serif;
     padding: 10px;
 }
+
 header {
     position: fixed;
     height: 25px;
@@ -56,6 +60,7 @@ header {
     color: white;
     font-family: 'Glegoo', serif;
 }
+
 #start {
     position: absolute;
     bottom: 0;
